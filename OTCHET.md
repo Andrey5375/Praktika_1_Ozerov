@@ -113,8 +113,10 @@ sudo cp "$file" /usr/local/bin/
 
 Например, пусть программа называется reg:
 ```bash
-xartd0@xartd0-Strix-GL504GW-GL504GW:~/confmirea$ ./reg.sh banner.sh
-xartd0@xartd0-Strix-GL504GW-GL504GW:~/confmirea$ ls /usr/local/bin
+User@DESKTOP-OBLBJ4I MINGW64 ~/Desktop
+$ ./reg.sh banner.sh
+User@DESKTOP-OBLBJ4I MINGW64 ~/Desktop
+$ ls /usr/local/bin
 banner.sh  ngrok
 ```
 
