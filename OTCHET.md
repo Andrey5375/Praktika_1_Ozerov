@@ -80,13 +80,22 @@ id=$(grep -o -E '\b[a-zA-Z]*\b' "$file" | sort -u)
 
 ```
 ```bash
-xartd0@xartd0-Strix-GL504GW-GL504GW:~/confmirea$ grep -oE '\b[a-zA-Z_][a-zA-Z0-9_]*\b' hello.c | grep -vE '\b(int|void|return|if|else|for|while|include|stdio)\b' | sort | uniq
-h
-hello
-main
-n
-printf
-world
+User@DESKTOP-OBLBJ4I MINGW64 ~/desktop
+$ grep -oE '\b[a-zA-Z_][a-zA-Z0-9_]*\b' Nomer4.sh | grep -vE '\b(int|void|return|if|else|for|while|include|stdio)\b' | sort | uniq
+E
+Z
+a
+b
+bash
+bin
+file
+grep
+id
+o
+sort
+u
+zA
+
 ```
 
 # Задача 5
