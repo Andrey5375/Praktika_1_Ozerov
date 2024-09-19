@@ -124,27 +124,28 @@ banner.sh  ngrok
 Написать программу для проверки наличия комментария в первой строке файлов с расширением c, js и py.
 ## Код
 ```bash
+
 #!/bin/bash
 
-# Проход по всем файлам с расширениями .c, .js, .py
 for file in $(find . -type f \( -name "*.c" -o -name "*.js" -o -name "*.py" \)); do
-    # Чтение первой строки файла
     first_line=$(head -n 1 "$file")
-    
-    # Проверка, начинается ли строка с комментария (для C, JS и Python)
-    if [[ "$file" == *.c || "$file" == *.js ]]; then
-        if [[ "$first_line" =~ ^(//|/\*) ]]; then
-            echo "Файл $file содержит комментарий в первой строке."
-        else
-            echo "Файл $file не содержит комментарий в первой строке."
-        fi
-    elif [[ "$file" == *.py ]]; then
-        if [[ "$first_line" =~ ^# ]]; then
-            echo "Файл $file содержит комментарий в первой строке."
-        else
-            echo "Файл $file не содержит комментарий в первой строке."
-        fi
-    fi
+
+    case "$file" in
+        *.c|*.js)
+            if [[ "$first_line" =~ ^(//|/\*) ]]; then
+                echo "The file $file contains a comment in the first line."
+            else
+                echo "The file $file does not contain a comment on the first line."
+            fi
+            ;;
+        *.py)
+            if [[ "$first_line" =~ ^# ]]; then
+                echo "The file $file contains a comment in the first line."
+            else
+                echo "The file $file does not contain a comment on the first line."
+            fi
+            ;;
+    esac
 done
 
 ```
