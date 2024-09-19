@@ -59,10 +59,13 @@ echo "| ${text} |"
 echo "+${line}+"
 ```
 ```bash
-xartd0@xartd0-Strix-GL504GW-GL504GW:~/confmirea$ ./banner.sh "xartd0"
-+--------+
-| xartd0 |
-+--------+
+User@DESKTOP-OBLBJ4I MINGW64 ~/desktop
+$ ./banner.sh "Druid"
++-------+
+| Druid |
++-------+
+
+
 ```
 
 # Задача 4
