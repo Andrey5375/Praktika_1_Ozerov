@@ -150,10 +150,12 @@ done
 ```
 
 ```bash
-xartd0@xartd0-System-Product-Name:~/Desktop/confupr$ ./6.sh 
-Файл ./test.js содержит комментарий в первой строке.
-Файл ./test.c содержит комментарий в первой строке.
-Файл ./test.py не содержит комментарий в первой строке.
+User@DESKTOP-OBLBJ4I MINGW64 ~/Desktop/proverka
+$ ./6.sh
+The file ./proverka.c does not contain a comment on the first line.
+The file ./proverka.js does not contain a comment on the first line.
+The file ./proverka.py does not contain a comment on the first line.
+
 ```
 
 # Задача 7
