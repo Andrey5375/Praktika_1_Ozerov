@@ -230,3 +230,48 @@ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 *./proverka.py
 
 
 ```
+#Задача 8
+Написать программу, которая находит все файлы в данном каталоге с расширением, указанным в качестве аргумента и архивирует все эти файлы в архив tar.
+```bash
+#!/bin/bash
+
+# Проверка аргументов
+if [ "$#" -ne 2 ]; then
+    echo "Использование: $0 <каталог> <расширение>"
+    exit 1
+fi
+
+# Присваивание аргументов переменным
+directory=$1
+extension=$2
+archive_name="archive.tar"
+
+# Создание временного файла для хранения списка файлов
+temp_file=$(mktemp)
+
+# Поиск файлов с указанным расширением и сохранение их в временный файл
+find "$directory" -type f -name "*.$extension" > "$temp_file"
+
+# Проверка, найдены ли файлы
+if [ -s "$temp_file" ]; then
+    # Архивирование файлов из временного файла
+    tar -cvf "$archive_name" -T "$temp_file"
+    echo "Archive created: $archive_name"
+else
+    echo "files .$extension not found."
+fi
+
+# Удаление временного файла
+rm "$temp_file"
+
+```
+
+```bash
+User@DESKTOP-OBLBJ4I MINGW64 ~/Desktop/zad8
+$ ./8.sh "." "js"
+./prov (2).js
+./prov.js
+Archive created: archive.tar
+
+
+```
